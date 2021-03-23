@@ -124,8 +124,11 @@ router.post("hooks.slack", async ctx => {
   }
 
   const team = await Team.findOne({
-    where: { slackId: team_id },
+    order: [
+      ['createdAt', 'ASC'],
+    ]
   });
+
   if (!team) {
     ctx.body = {
       response_type: "ephemeral",
@@ -135,20 +138,10 @@ router.post("hooks.slack", async ctx => {
     return;
   }
 
-  const user = await User.findOne({
-    where: {
-      teamId: team.id,
-      service: "slack",
-      serviceId: user_id,
-    },
-  });
-
   const options = {
     limit: 5,
   };
-  const results = user
-    ? await Document.searchForUser(user, text, options)
-    : await Document.searchForTeam(team, text, options);
+  const results = await Document.searchForTeam(team, text, options);
 
   if (results.length) {
     const attachments = [];
