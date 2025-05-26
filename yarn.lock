@@ -2413,15 +2413,46 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@sentry/browser@6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-6.3.1.tgz#6142dd4c72308f4e1a12e585e3300fd54ca058cd"
-  integrity sha512-Ri4tYsyuJIeLQnvQUqbpGzailUYpbjFSYM0+yEM63gPsjiXdg+W8yKHluA6cs6FLWVN3oWfwHW7Kd61echlGuw==
+"@sentry-internal/browser-utils@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/browser-utils/-/browser-utils-9.22.0.tgz#dd05ac2ed925b70a0ca9bdec472f2566761dad91"
+  integrity sha512-Ou1tBnVxFAIn8i9gvrWzRotNJQYiu3awNXpsFCw6qFwmiKAVPa6b13vCdolhXnrIiuR77jY1LQnKh9hXpoRzsg==
   dependencies:
-    "@sentry/core" "6.3.1"
-    "@sentry/types" "6.3.1"
-    "@sentry/utils" "6.3.1"
-    tslib "^1.9.3"
+    "@sentry/core" "9.22.0"
+
+"@sentry-internal/feedback@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/feedback/-/feedback-9.22.0.tgz#760f86903fde91a840bc77fc104b39a873301983"
+  integrity sha512-zgMVkoC61fgi41zLcSZA59vOtKxcLrKBo1ECYhPD1hxEaneNqY5fhXDwlQBw96P5l2yqkgfX6YZtSdU4ejI9yA==
+  dependencies:
+    "@sentry/core" "9.22.0"
+
+"@sentry-internal/replay-canvas@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/replay-canvas/-/replay-canvas-9.22.0.tgz#431e289a5db247265e640a1e7aecf9ff2dba6a70"
+  integrity sha512-EcG9IMSEalFe49kowBTJObWjof/iHteDwpyuAszsFDdQUYATrVUtwpwN7o52vDYWJud4arhjrQnMamIGxa79eQ==
+  dependencies:
+    "@sentry-internal/replay" "9.22.0"
+    "@sentry/core" "9.22.0"
+
+"@sentry-internal/replay@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/replay/-/replay-9.22.0.tgz#e67ed6cee4cf481d428986e4419ee099669df9ef"
+  integrity sha512-9GOycoKbrclcRXfcbNV8svbmAsOS5R4wXBQmKF4pFLkmFA/lJv9kdZSNYkRvkrxdNfbMIJXP+DV9EqTZcryXig==
+  dependencies:
+    "@sentry-internal/browser-utils" "9.22.0"
+    "@sentry/core" "9.22.0"
+
+"@sentry/browser@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-9.22.0.tgz#6eee0c047612b35e7ab4960350a57ffcc51f76f4"
+  integrity sha512-3TeRm74dvX0JdjX0AgkQa+22iUHwHnY+Q6M05NZ+tDeCNHGK/mEBTeqquS1oQX67jWyuvYmG3VV6RJUxtG9Paw==
+  dependencies:
+    "@sentry-internal/browser-utils" "9.22.0"
+    "@sentry-internal/feedback" "9.22.0"
+    "@sentry-internal/replay" "9.22.0"
+    "@sentry-internal/replay-canvas" "9.22.0"
+    "@sentry/core" "9.22.0"
 
 "@sentry/core@6.3.1":
   version "6.3.1"
@@ -2433,6 +2464,11 @@
     "@sentry/types" "6.3.1"
     "@sentry/utils" "6.3.1"
     tslib "^1.9.3"
+
+"@sentry/core@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-9.22.0.tgz#b35113bcba24a6ae437c548c2cbac941302a60ef"
+  integrity sha512-ixvtKmPF42Y6ckGUbFlB54OWI75H2gO5UYHojO6eXFpS7xO3ZGgV/QH6wb40mWK+0w5XZ0233FuU9VpsuE6mKA==
 
 "@sentry/hub@6.3.1":
   version "6.3.1"
@@ -2467,17 +2503,14 @@
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/react@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@sentry/react/-/react-6.3.1.tgz#5082aa145972eec38cc8ceea8e5d8ee3f7f5f86a"
-  integrity sha512-3eFSqdS0QAb4RFNxS0gzVm05q8c5KQp+3TlmqBjoovqWL/FvGvDoqaBmFT+arvPZ88qngveMEk1v6445L0gFTg==
+"@sentry/react@^9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry/react/-/react-9.22.0.tgz#4d9b3c011ced48a55ac32067caa1d5ad850b185c"
+  integrity sha512-mI43NnioBYdG5TiXqRlhV1feZs9bnrrl+k5HOHBK7VQtymaXO0fkcsRLZTkdSgLRLMJGasZuvVhq2xK+18QyWQ==
   dependencies:
-    "@sentry/browser" "6.3.1"
-    "@sentry/minimal" "6.3.1"
-    "@sentry/types" "6.3.1"
-    "@sentry/utils" "6.3.1"
+    "@sentry/browser" "9.22.0"
+    "@sentry/core" "9.22.0"
     hoist-non-react-statics "^3.3.2"
-    tslib "^1.9.3"
 
 "@sentry/tracing@6.3.1", "@sentry/tracing@^6.3.1":
   version "6.3.1"
